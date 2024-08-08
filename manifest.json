@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Event Details Scraper",
+  "version": "1.0",
+  "description": "Scrapes event details from the page.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://seatgeek.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
